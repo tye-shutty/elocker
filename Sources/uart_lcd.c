@@ -24,17 +24,17 @@ void uart0_putstring(char* start){
 //1.5 ms execution time
 void cursor_home(){
 	char temp[] = {0xFE, 0x46, 0};
-	UART0_Putstring(temp);
+	uart0_putstring(temp);
 }
 //0.1 ms execution time
 void move_cursor_right(){
 	char temp[] = {0xFE, 0x4A, 0};
-	UART0_Putstring(temp);
+	uart0_putstring(temp);
 }
 //1.5 ms execution time
 void clear_screen(){
 	char temp[] = {0xFE, 0x51, 0};
-	UART0_Putstring(temp);
+	uart0_putstring(temp);
 }
 
 //Each message must be less than 33 characters (not including null)
@@ -58,15 +58,15 @@ void led_print_string(char *char_ptr){
 }
 
 void led_uart0_interface_init(){
-	SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;  // Enable PORT B clock
+	SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK | SIM_SCGC5_PORTA_MASK;
 	SIM_SCGC4 |= SIM_SCGC4_UART0_MASK;  //Enable UART0 clock
-	PORTB_PCR17 |= PORT_PCR_MUX(3);  //Enable UART0 TX
-	UART0_C2 &= ~UART_C2_TE_MASK;  //disable Output
+	PORTA_PCR2 |= PORT_PCR_MUX(2);  //Enable UART0 TX: A2 has a pin header
+	UART0_C2 &= ~(UART_C2_TE_MASK | UART_C2_RE_MASK);  //disable I/O
 	UART0_BDH = 0x00;
 	UART0_BDL = 0x88;  //9600 Baud
 	UART0_C2 |= UART_C2_TE_MASK;  //enable Output
 	char temp[] = {0xFE, 0x41, 0};  //LED on
-	UART0_Putstring(temp);
+	uart0_putstring(temp);
 	char temp2[] = "Initializing...";
-	LED_print_string(temp);
+	led_print_string(temp2);
 }
