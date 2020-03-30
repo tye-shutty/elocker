@@ -1,8 +1,8 @@
-#include "lcd.h"
+#include "putty.h"
 
-static lcd_t* this = 0;
+static putty_t* this = 0;
 
-void init_lcd() {
+void init_putty() {
 	uart_init();
 }
 
@@ -21,11 +21,11 @@ void print_string(char* string) {
     uart_put_string(string);
 }
 
-lcd_t* get_lcd() {
+putty_t* get_putty() {
    if(this == 0) {
-    	init_lcd();
+    	init_putty();
 
-    	this = (lcd_t*) malloc(sizeof(lcd_t));
+    	this = (putty_t*) malloc(sizeof(putty_t));
         this -> put_char = &put_char;
         this -> print_line = &print_line;
         this -> print_string = &print_string;

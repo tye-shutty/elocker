@@ -1,15 +1,15 @@
 #include "locker_module/display_timer.h"
 #include "locker_module/solenoid_lock.h"
-#include "locker_module/lcd.h"
+#include "locker_module/putty.h"
 #include "user_manager.h"
 #include "messages.h"
 #include "access_manager.h"
 
 void handle_user(locker_t* locker) {
-	lcd_t* lcd = get_lcd();
+	putty_t* putty = get_putty();
 	int isAuthenticated = authenticate_user(locker);
 	if (isAuthenticated == 0) {
-		lcd -> print_line(openMsg);
+		putty -> print_line(openMsg);
 		lock_t* lock = get_solenoid_lock(locker -> number);
 		lock -> open();
 		timer_t* timer = get_timer();

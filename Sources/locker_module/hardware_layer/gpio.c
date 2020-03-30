@@ -2,7 +2,8 @@
 #include "fsl_device_registers.h"
 
 /*
- * This function initializes PTC5 and PTC7 as outputs, and PTC10 and PTC18 as inputs
+ * This function initializes PTC5 and PTC7 as outputs, and PTC10 and PTC18 as
+ * inputs.
  */
 void gpio_init() {
 	SIM_SCGC5 |= SIM_SCGC5_PORTC(1);

@@ -1,5 +1,5 @@
 #include "locker_module/keypad.h"
-#include "locker_module/lcd.h"
+#include "locker_module/putty.h"
 #include "locker.h"
 #include "messages.h"
 #include "user_manager.h"
@@ -9,13 +9,13 @@
 int main(void)
 {
 	keypad_t* keypad = get_keypad();
-	lcd_t* lcd = get_lcd();
+	putty_t* putty = get_putty();
 	locker_t* locker_1 = get_locker(1);
 	locker_t* locker_2 = get_locker(2);
 	locker_t* admin = get_locker(0);
 
 	while(1) {
-		lcd -> print_line(welcomeMsg);
+		putty -> print_line(welcomeMsg);
 
 		char keyPressed = keypad -> get_debounced_key();
 		if (keyPressed == '1') {
@@ -27,10 +27,8 @@ int main(void)
 		} else if (keyPressed == 'B') {
 			handle_password_change();
 		}
-		lcd -> print_line(clearDisplay);
+		putty -> print_line(clearDisplay);
 	}
 
     return 0;
 }
-
-

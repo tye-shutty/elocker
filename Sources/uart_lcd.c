@@ -8,7 +8,7 @@
 
 #include "fsl_device_registers.h"
 #include "MK64F12.h"
-#include "ms_delay.c"
+#include "flexTimer.h"
 
 //0.1 ms Display Character Write execution time
 //0x20 to 0x7F displays the standard set of characters
@@ -41,7 +41,7 @@ void clear_screen(){
 //and null terminated.
 //0.1 ms Display Character Write execution time
 //0x20 to 0x7F displays the standard set of characters
-void led_print_string(char *char_ptr){
+void lcd_print_string(char *char_ptr){
 	clear_screen();
 	ms_delay(2);
 	cursor_home();
@@ -57,7 +57,7 @@ void led_print_string(char *char_ptr){
 	}
 }
 
-void led_uart0_interface_init(){
+void lcd_uart0_interface_init(){
 	SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK | SIM_SCGC5_PORTA_MASK;
 	SIM_SCGC4 |= SIM_SCGC4_UART0_MASK;  //Enable UART0 clock
 	PORTA_PCR2 |= PORT_PCR_MUX(2);  //Enable UART0 TX: A2 has a pin header
@@ -65,8 +65,8 @@ void led_uart0_interface_init(){
 	UART0_BDH = 0x00;
 	UART0_BDL = 0x88;  //9600 Baud
 	UART0_C2 |= UART_C2_TE_MASK;  //enable Output
-	char temp[] = {0xFE, 0x41, 0};  //LED on
+	char temp[] = {0xFE, 0x41, 0};  //lcd on
 	uart0_putstring(temp);
 	char temp2[] = "Initializing...";
-	led_print_string(temp2);
+	lcd_print_string(temp2);
 }
