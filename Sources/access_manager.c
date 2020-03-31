@@ -70,9 +70,9 @@ int authenticate_user(locker_t* locker) {
 	}
 }
 
-void change_password(locker_t* locker, putty_t* putty) {
+void change_password(locker_t* locker, putty_t* putty, int isAdmin) {
 	int isAuthenticated = authenticate_user(locker);
-	if (isAuthenticated == 0) {
+	if (isAuthenticated == 0 || isAdmin == 0) {
 		pot_t* potentiometer = get_pot();
 		int* combination = (int*) malloc(sizeof(int) * 3);
 		combination[0] = 0;
@@ -113,7 +113,7 @@ void change_password(locker_t* locker, putty_t* putty) {
 	}
 }
 
-void handle_password_change() {
+void handle_password_change(int isAdmin) {
 	locker_t* locker_1 = get_locker(1);
 	locker_t* locker_2 = get_locker(2);
 	locker_t* admin = get_locker(0);
@@ -126,10 +126,15 @@ void handle_password_change() {
 	keypad_t* keypad = get_keypad();
 	char keyPressed = keypad -> get_debounced_key();
 	if (keyPressed == '1') {
-		change_password(locker_1, putty);
+		change_password(locker_1, putty, isAdmin);
+		putty -> print_string(passChangedMsg);
 	} else if (keyPressed == '2') {
-		change_password(locker_2, putty);
+		change_password(locker_2, putty, isAdmin);
+		putty -> print_string(passChangedMsg);
 	} else if (keyPressed == 'A') {
-		change_password(admin, putty);
+		change_password(admin, putty, isAdmin);
+		putty -> print_string(passChangedMsg);
 	}
+
+	timer -> delay(2000);
 }

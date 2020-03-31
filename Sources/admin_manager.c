@@ -32,7 +32,7 @@ void handle_admin(locker_t* admin) {
 				timer -> delay(2000);
 				return;
 			} else if (keyPressed == 'B') {
-
+				handle_password_change(0);
 			}
 			putty -> print_line(clearDisplay);
 		}

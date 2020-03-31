@@ -25,7 +25,7 @@ int main(void)
 		} else if (keyPressed == 'A') {
 			handle_admin(admin);
 		} else if (keyPressed == 'B') {
-			handle_password_change();
+			handle_password_change(-1);
 		}
 		putty -> print_line(clearDisplay);
 	}
