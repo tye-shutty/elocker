@@ -1,3 +1,9 @@
+/* 
+	File: locker.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the locker.h header file
+*/
+
 #include "locker.h"
 #include <stdlib.h>
 

@@ -1,3 +1,14 @@
+/* 
+	File: access_manager.h
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+  The access manager module is responsible for getting 
+  the combination from the user or admin and verifying 
+  if the combination is correct. The module dispatches 
+  commands to the speaker, and putty to provide feedback 
+  to the user. The module also implements the logic to 
+  change the password. 
+*/
+
 #ifndef SOURCES_ACCESS_MANAGER_H_
 #define SOURCES_ACCESS_MANAGER_H_
 

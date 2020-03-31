@@ -1,3 +1,9 @@
+/* 
+	File: admin_manager.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the admin_manager.h header file
+*/
+
 #include "locker_module/display_timer.h"
 #include "locker_module/solenoid_lock.h"
 #include "locker_module/keypad.h"

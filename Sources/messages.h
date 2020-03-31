@@ -1,3 +1,9 @@
+/* 
+	File: messages.h
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Collection of all messages displayed by the system
+*/
+
 char welcomeMsg[] =   "    Welcome   ";
 char enterPasswordMsg[] =   "Enter password";
 char enterNewPasswordMsg[] =   "New password";

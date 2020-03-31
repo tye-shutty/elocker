@@ -1,3 +1,9 @@
+/* 
+	File: access_manager.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the access_manager.h header file
+*/
+
 #include "locker_module/potentiometer.h"
 #include "locker_module/speaker.h"
 #include "locker_module/keypad.h"

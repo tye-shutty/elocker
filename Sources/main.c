@@ -1,3 +1,11 @@
+/* 
+	File: main.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	This is the entry point of the system. The module is
+	responsible for dispatching instructions for all
+	manager modules based on the input of the user. 
+*/
+
 #include "locker_module/keypad.h"
 #include "locker_module/putty.h"
 #include "locker.h"
