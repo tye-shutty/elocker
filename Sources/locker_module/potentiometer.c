@@ -1,3 +1,9 @@
+/* 
+	File: potentiometer.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the potentiometer.h header file
+*/
+
 #include "potentiometer.h"
 
 static pot_t* this = 0;

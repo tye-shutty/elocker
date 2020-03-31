@@ -1,3 +1,9 @@
+/* 
+	File: speaker.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the speaker.h header file
+*/
+
 #include "speaker.h"
 #include "display_timer.h"
 #include <stdlib.h>

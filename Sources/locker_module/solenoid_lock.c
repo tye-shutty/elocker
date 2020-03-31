@@ -1,3 +1,9 @@
+/* 
+	File: solenoid_lock.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the solenoid_lock.h header file
+*/
+
 #include "solenoid_lock.h"
 #include <stdlib.h>
 

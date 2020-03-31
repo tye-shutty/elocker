@@ -1,3 +1,12 @@
+/* 
+	File: potentiometer.h
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	This module is an abstraction for the potentiometer. The module 
+	utilizes the adc module to retrieve the current value of
+	the potentiometer.The module ensures that only a single
+	instance of the potentiometer is created.
+*/
+
 #ifndef SOURCES_LOCKER_MODULE_POTENTIOMETER_H_
 #define SOURCES_LOCKER_MODULE_POTENTIOMETER_H_
 

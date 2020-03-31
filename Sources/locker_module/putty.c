@@ -1,3 +1,9 @@
+/* 
+	File: putty.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the putty.h header file
+*/
+
 #include "putty.h"
 
 static putty_t* this = 0;

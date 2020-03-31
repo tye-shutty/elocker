@@ -1,3 +1,13 @@
+/* 
+	File: speaker.h
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	This module implement the speaker function play. Two types
+	of sounds are programmed: success and fail. The success sound
+	is a single beep at 261Hz, while the fail sound is a double beep
+	at 698 Hz. The module ensures that only a single	instance of
+	the speaker	is created.
+*/
+
 #ifndef SOURCES_LOCKER_MODULE_SPEAKER_H_
 #define SOURCES_LOCKER_MODULE_SPEAKER_H_
 

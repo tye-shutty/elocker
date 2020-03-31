@@ -1,3 +1,9 @@
+/* 
+	File: keypad.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the keypad.h header file
+*/
+
 #include "keypad.h"
 
 static keypad_t* this = 0;

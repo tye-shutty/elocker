@@ -1,3 +1,11 @@
+/* 
+	File: keypad.h
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	This module is an abstraction for the keypad. The module 
+	implements a method get the key that was pressedand it
+	debounces the input. The module ensures that only a single
+	instance of the keypad is created.
+*/
 #ifndef SOURCES_LOCKER_MODULE_KEYPAD_H_
 #define SOURCES_LOCKER_MODULE_KEYPAD_H_
 

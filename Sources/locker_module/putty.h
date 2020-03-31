@@ -1,3 +1,12 @@
+/* 
+	File: putty.h
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	This module is an abstraction for the putty terminal. 
+	The module utilizes the uart module to call the functions
+	to print strings and chars. The module ensures that only
+	a single instance of the putty is created.
+*/
+
 #ifndef SOURCES_LOCKER_MODULE_PUTTY_H_
 #define SOURCES_LOCKER_MODULE_PUTTY_H_
 
