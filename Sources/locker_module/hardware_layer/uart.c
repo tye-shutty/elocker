@@ -1,3 +1,8 @@
+/* 
+	File: uart.c
+	Authors: Alexandre Moreira de Carvalho
+	Implementation of the uart.h header file
+*/
 #include "MK64F12.h"
 #include "fsl_device_registers.h"
 

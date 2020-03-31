@@ -1,3 +1,8 @@
+/* 
+	File: dac.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the dac.h header file
+*/
 #include "dac.h"
 #include "MK64F12.h"
 
@@ -38,4 +43,3 @@ void dac_out(int frequency, float time) {
 	};
 	PIT_TCTRL0 ^= PIT_TCTRL_TEN_MASK; // disable the timer
 }
-

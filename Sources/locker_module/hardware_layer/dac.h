@@ -1,3 +1,15 @@
+/* 
+	File: dac.h
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	This module is responsible to initialize the DAC0 at the 
+	DAC0_OUT pin, and the periodic timer interrupt (PIT0).
+	The PIT and the DAC are used together to generate a sine
+	wave that can be used to generate a tone in a speaker device.
+	The module permits the control over the frequency and duration
+	of the sine wave. The DAC outputs 12-bit values, and is
+	configured with buffer disabled.
+*/
+
 #ifndef SOURCES_LOCKER_MODULE_HARDWARE_LAYER_DAC_H_
 #define SOURCES_LOCKER_MODULE_HARDWARE_LAYER_DAC_H_
 

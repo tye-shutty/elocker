@@ -1,14 +1,17 @@
+/* 
+	File: gpio.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the gpio.h header file
+*/
+
 #include "gpio.h"
 #include "fsl_device_registers.h"
 
-/*
- * This function initializes PTC5 and PTC7 as outputs, and PTC10 and PTC18 as
- * inputs.
- */
 void gpio_init() {
 	SIM_SCGC5 |= SIM_SCGC5_PORTC(1);
 	SIM_SCGC5 |= SIM_SCGC5_PORTB(1);
 
+	// Solenoid pints
 	PORTC_PCR3 |= PORT_PCR_MUX(1);
 	GPIOC_PDDR |= 0x01 << 3;
 

@@ -1,10 +1,11 @@
+/* 
+	File: adc.c
+	Authors: Alexandre Moreira de Carvalho and Tye Shutty
+	Implementation of the adc.h header file
+*/
 #include "adc.h"
 #include "fsl_device_registers.h"
 
-/*
- * This module initializes the ADC0 at pin PTE24 (Channel 17)
- * ADC is configured as
- */
 void adc_init() {
 	SIM_SCGC6 |= SIM_SCGC6_ADC0_MASK;
 	SIM_SCGC5 |= SIM_SCGC5_PORTE(1);
