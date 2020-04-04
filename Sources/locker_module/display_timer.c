@@ -1,4 +1,4 @@
-/* 
+/*
 	File: display_timer.c
 	Authors: Alexandre Moreira de Carvalho and Tye Shutty
 	Implementation of the display_timer.h header file

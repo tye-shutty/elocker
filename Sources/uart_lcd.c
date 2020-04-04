@@ -8,7 +8,7 @@
 
 #include "fsl_device_registers.h"
 #include "MK64F12.h"
-#include "flexTimer.h"
+#include "display_timer.h"
 
 //0.1 ms Display Character Write execution time
 //0x20 to 0x7F displays the standard set of characters
@@ -16,7 +16,7 @@ void uart0_putstring(char* start){
 	while(*start != NULL){
 		while(!(UART0_S1 & 1<<7));  //Transmit Data Register Empty Flag
 		UART0_D = *start;
-		ms_delay(1);
+		delay(1);
 		start++;
 	}
 }
@@ -43,17 +43,17 @@ void clear_screen(){
 //0x20 to 0x7F displays the standard set of characters
 void lcd_print_string(char *char_ptr){
 	clear_screen();
-	ms_delay(2);
+	delay(2);
 	cursor_home();
-	ms_delay(2);
+	delay(2);
 	while(*char_ptr != NULL){
 		while(!(UART0_S1 & 1<<7));  //Transmit Data Register Empty Flag
 		UART0_D = *char_ptr;
 		char_ptr++;
-		ms_delay(1);
+		delay(1);
 		while(!(UART0_S1 & 1<<7));
 		move_cursor_right();
-		ms_delay(1);
+		delay(1);
 	}
 }
 
